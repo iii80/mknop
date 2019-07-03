@@ -1,0 +1,2 @@
+rootdev=UUID=e1e91e82-7372-465d-923d-76272ffe06a8
+rootdev=LABEL=ROOTFS
