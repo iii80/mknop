@@ -38,6 +38,7 @@ copy2bootimg() {
 
 mount_opimg() {
     [ ! -d $out_dir/openwrt ] && mkdir -p $out_dir/openwrt
+    [ ! -d $rootfs_dir ] && sudo mkdir $rootfs_dir
 
     if [ -f $openwrt_dir/*.tar.gz ]; then
         tar -xzf $openwrt_dir/*.tar.gz -C $out_dir/openwrt && return
@@ -51,7 +52,6 @@ mount_opimg() {
 
     [ -f $openwrt_dir/*.img ] && {
         loop=$(sudo losetup -P -f --show $openwrt_dir/*.img)
-        [ ! -d $rootfs_dir ] && sudo mkdir $rootfs_dir
         sudo mount ${loop}p2 $rootfs_dir
         [ $? -ne 0 ] && echo -e "${red}\n挂载OpenWrt镜像失败！" && exit
     }
