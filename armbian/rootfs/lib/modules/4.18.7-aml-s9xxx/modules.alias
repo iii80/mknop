@@ -2011,6 +2011,7 @@ alias ip_set_hash:net,iface ip_set_hash_netiface
 alias ip_set_hash:net,net ip_set_hash_netnet
 alias ip_set_hash:net,port,net ip_set_hash_netportnet
 alias ip_set_list:set ip_set_list_set
+alias ipt_FULLCONENAT xt_FULLCONENAT
 alias ip_conntrack nf_conntrack_ipv4
 alias nf_conntrack-2 nf_conntrack_ipv4
 alias nf-nat-2 nf_nat_ipv4
